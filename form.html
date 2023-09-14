@@ -1,0 +1,177 @@
+<html>  
+<head>  
+	<link rel="icon" type="image/x-icon" href="https://images.collegedunia.com/public/college_data/images/logos/1684479642Screenshot20230518105113.png">
+	<meta charset="UTF-8">
+	<meta name="description" content="Free Web tutorials">
+	<meta name="keywords" content="HTML, CSS, JavaScript">
+	<meta name="author" content="John Doe">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+<title> Register Page</title>  
+ 
+<style>
+
+body{
+	background:linear-gradient(rgba(255,255,255,0.9),rgba(255,255,255,0.9)),url("https://images.collegedunia.com/public/college_data/images/logos/1684479642Screenshot20230518105113.png");
+	background-repeat: no-repeat;
+	background-attachment:fixed;
+	background-position:center;
+	text-decoration:bold;
+}
+
+.logo{
+    padding-top: 20px;
+    padding-left: 20px;
+	padding-right:20px;
+	padding-bottom:10px;
+	position:sticky;
+  }
+
+hr{
+	border-color: red;
+    border-width: 1px;
+}
+
+td{
+	padding:20px;
+}
+
+tr,td{
+	background-color:white;
+}
+
+h1{
+	padding-top:50px;
+	text-align:center;
+	text-decoration:bold;
+	color:blue;
+}
+
+
+.button-container {
+	display: flex;
+	gap: 20px;
+	padding-top:20px;
+	padding-bottom:30px;
+	margin-left:44%;
+}
+ 
+ 
+.butt {
+    background-color: red;
+    color: white;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.butt:hover {
+    background-color: blue;
+} 
+ 
+</style>
+</head> 
+
+<body>  
+<div class="logo">
+	<img src="https://mitwpu.edu.in/assets/frontend/images/mit-wpu_logo.png" alt="MITWPU" width="300" height="100">
+</div>
+
+<hr class="separator">
+
+
+<div id="form">
+	<h1> Register YOUR ACCOUNT</h1>  
+
+	<table cellspacing="2" align="center" cellpadding="10" border="1px">  
+	<tr><td>F Name</td>   
+	<td><input type="text" placeholder="FName" id="n1"></td></tr>
+	
+	<tr><td>L Name</td>   
+	<td><input type="text" placeholder="LName" id="n2"></td></tr>		
+	
+	<tr><td>Email </td>  
+	<td><input type="text" placeholder="Enter your email id" id="e1"></td></tr>  
+	
+	<tr><td>Phone no. </td>  
+	<td><input type="text" placeholder="Enter your Phone no." id="pn"></td></tr>  
+	
+	<tr><td> Set Password</td>  
+	<td><input type="password" placeholder="Set a password" id="p1"></td></tr>  
+
+	<tr><td>Confirm Password</td>  
+	<td><input type="password" placeholder="Confirm your password" id="p2"></td></tr>  
+	</table> 		
+	
+	<div class="button-container">
+		<button class="butt" onclick="create_account()">Create</button>
+		<button class="butt" onclick="window.location.href = 'Mitwpu.html';">Home</button>
+	</div>
+	
+</div>
+
+<script type="text/javascript">  
+	
+	function create_account()
+	{  
+	var nf=document.getElementById("n1").value;  
+	var nl=document.getElementById("n2").value;	
+	var e=document.getElementById("e1").value;  
+	var fno=document.getElementById("pn").value; 
+	var p=document.getElementById("p1").value;  
+	var cp=document.getElementById("p2").value;  
+ 
+        var letters = /^[A-Za-z]+$/;  
+        var email_val = /^([a-zA-Z0-9_\.\-])+\@mitwpu.edu.in+$/;  
+		var phone_val = /^\d{10}$/
+		
+		if(nf==''||nl==''||e==''||fno==''||p==''||cp==''){  
+		alert("Enter each details correctly");  
+		}	  
+
+		else if(!letters.test(nf))  
+        {  
+            alert('Name is incorrect must contain alphabets only');  
+        }  
+		
+		else if(!letters.test(nl))  
+        {  
+            alert('Name is incorrect must contain alphabets only');  
+        }  
+		
+		else if (!email_val.test(e))  
+        {  
+            alert('Invalid email format please enter valid email id (containing @mitwpu.edu.in)');  
+        }  
+		
+		else if (!phone_val.test(fno))  
+        {  
+            alert('Enter valid phone no.');  
+        }  
+
+		else if(p!=cp)  
+		{  
+			alert("Passwords not matching");  
+		}  
+
+		else if(document.getElementById("p1").value.length > 12)  
+		{  
+			alert("Password maximum length is 12");  
+		}  
+
+		else if(document.getElementById("p1").value.length < 6)  
+		{  
+			alert("Password minimum length is 6");  
+		}  
+
+		else{  
+			alert("Your account has been created successfully... Redirecting to Mitwpu Page");  
+			window.location="Mitwpu.html";  
+		}  
+	}  
+
+</script>
+  
+</body>  
+</html>  
